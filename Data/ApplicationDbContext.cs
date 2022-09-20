@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using JobsBoardWebApp.Models;
 
 namespace JobsBoardWebApp.Data
 {
@@ -12,5 +13,6 @@ namespace JobsBoardWebApp.Data
             : base(options)
         {
         }
+        public DbSet<JobsBoardWebApp.Models.Job> Job { get; set; }
     }
 }
