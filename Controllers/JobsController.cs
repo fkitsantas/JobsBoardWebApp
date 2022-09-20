@@ -25,6 +25,18 @@ namespace JobsBoardWebApp.Controllers
             return View(await _context.Job.ToListAsync());
         }
 
+        // GET: Jobs/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // POST: Jobs/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchJobTitle, String SearchJobLocation)
+        {
+            return View("Index", await _context.Job.Where(j => j.JobTitle.Contains(SearchJobTitle)).ToListAsync());
+        } 
+
         // GET: Jobs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
