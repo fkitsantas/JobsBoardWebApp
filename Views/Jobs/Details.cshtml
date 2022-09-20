@@ -4,53 +4,48 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>@Html.DisplayFor(model => model.JobTitle)</h1>
 
 <div>
-    <h4>Job</h4>
+    <h4>/Details</h4>
     <hr />
     <dl class="row">
+
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobTitle)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.JobTitle)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobDescription)
+            Description
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JobDescription)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobLocation)
+            Location
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JobLocation)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobCompanyName)
+            Company Name
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JobCompanyName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobSalary)
+            Salary
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.JobSalary)
+            £@Html.DisplayFor(model => model.JobSalary)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobEmailAddress)
+            Email Address
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.JobEmailAddress)
+            <a href="mailto:@Html.DisplayFor(model => model.JobEmailAddress)">@Html.DisplayFor(model => model.JobEmailAddress)</a>
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobTelephone)
+            Telephone
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.JobTelephone)
+            <a href="tel:@Html.DisplayFor(model => model.JobTelephone)">@Html.DisplayFor(model => model.JobTelephone)</a>
         </dd>
     </dl>
 </div>

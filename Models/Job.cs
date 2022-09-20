@@ -8,6 +8,8 @@
 
         public string JobDescription { get; set; }
 
+        public string JobType { get; set; }
+
         public string JobLocation { get; set; }
 
         public string JobCompanyName { get; set; }
