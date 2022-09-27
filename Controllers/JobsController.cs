@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JobsBoardWebApp.Data;
 using JobsBoardWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JobsBoardWebApp.Controllers
 {
@@ -56,6 +57,7 @@ namespace JobsBoardWebApp.Controllers
         }
 
         // GET: Jobs/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -64,9 +66,10 @@ namespace JobsBoardWebApp.Controllers
         // POST: Jobs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,JobTitle,JobDescription,JobLocation,JobCompanyName,JobSalary,JobEmailAddress,JobTelephone")] Job job)
+        public async Task<IActionResult> Create([Bind("Id,JobTitle,JobDescription,JobType,JobLocation,JobCompanyName,JobSalary,JobEmailAddress,JobTelephone")] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +81,7 @@ namespace JobsBoardWebApp.Controllers
         }
 
         // GET: Jobs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,9 +100,10 @@ namespace JobsBoardWebApp.Controllers
         // POST: Jobs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,JobTitle,JobDescription,JobLocation,JobCompanyName,JobSalary,JobEmailAddress,JobTelephone")] Job job)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,JobTitle,JobDescription,JobType,JobLocation,JobCompanyName,JobSalary,JobEmailAddress,JobTelephone")] Job job)
         {
             if (id != job.Id)
             {

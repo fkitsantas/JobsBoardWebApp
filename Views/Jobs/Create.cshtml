@@ -1,12 +1,12 @@
 ﻿@model JobsBoardWebApp.Models.Job
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add a new Job";
 }
 
-<h1>Create</h1>
+<h1>Add a new Job</h1>
 
-<h4>Job</h4>
+<h4>Job Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,13 +19,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="JobDescription" class="control-label"></label>
-                <input asp-for="JobDescription" class="form-control" />
+                <textarea asp-for="JobDescription" class="form-control" rows="20" cols="40"></textarea>
                 <span asp-validation-for="JobDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="JobType" class="control-label"></label>
                 <select asp-for="JobType" class="form-control">
-                    <option value="fulltime">fulltime</option>
+                    <option selected="selected" value="fulltime">fulltime</option>
                     <option value="parttime">parttime</option>
                     <option value="internship">internship</option>
                     <option value="contract">contract</option>
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+           </div>
         </form>
     </div>
 </div>
